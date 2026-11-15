@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Confidentialité – Exploding Kittens entre potes</title>
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px;line-height:1.55;color:#222;background:#fff}a{color:#b3261e}h1{font-size:1.6em}h2{font-size:1.2em;margin-top:1.6em}nav{margin-bottom:1.5em;font-size:.95em}@media (prefers-color-scheme:dark){body{color:#eee;background:#151515}a{color:#ff8a80}}</style>
+</head><body>
+<nav><a href="./">Accueil</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="conditions.html">Conditions d'utilisation</a></nav>
+<div class="markdown-heading"><h1 class="heading-element">Règles de confidentialité — Exploding Kittens entre potes</h1><a id="user-content-règles-de-confidentialité--exploding-kittens-entre-potes" class="anchor" aria-label="Permalink: Règles de confidentialité — Exploding Kittens entre potes" href="#règles-de-confidentialité--exploding-kittens-entre-potes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Dernière mise à jour : 24 octobre 2026</p>
+<p>Exploding Kittens entre potes est un jeu de cartes privé, à jouer entre amis. L'appli n'a ni compte à créer, ni
+publicité, ni outil de mesure d'audience, et rien n'est vendu. Ce texte dit ce qui reste sur ton téléphone, ce qui
+en sort, par où ça passe et combien de temps c'est gardé.</p>
+<div class="markdown-heading"><h2 class="heading-element">Ce que l'appli garde sur ton téléphone</h2><a id="user-content-ce-que-lappli-garde-sur-ton-téléphone" class="anchor" aria-label="Permalink: Ce que l'appli garde sur ton téléphone" href="#ce-que-lappli-garde-sur-ton-téléphone"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Ton pseudo, ta couleur, ton avatar et, si tu en choisis une, ta photo de profil (une petite image d'environ 3 Ko).</li>
+<li>Ton code ami (8 lettres et chiffres tirés au hasard), ta liste d'amis, un identifiant de joueur et une clé
+secrète tirés au hasard (ils servent à reprendre ta place dans une partie après une coupure), et une clé de
+chiffrement pour tes amis (elle prouve à tes amis que c'est bien toi).</li>
+<li>Tes réglages (son, taille du texte, règles de partie).</li>
+</ul>
+<p>Ces informations disparaissent si tu désinstalles l'appli. Sur Android, ton pseudo, tes réglages et ta liste d'amis
+peuvent faire partie de la sauvegarde automatique de ton téléphone (compte Google), comme pour les autres applis,
+et revenir sur un nouveau téléphone. <strong>La clé secrète et la clé de tes amis n'en font pas partie</strong> : elles ne
+quittent jamais ton téléphone (sur un nouveau téléphone, tes amis devront accepter de nouveau ta demande d'ami).</p>
+<div class="markdown-heading"><h2 class="heading-element">Ce qui est envoyé pendant une partie</h2><a id="user-content-ce-qui-est-envoyé-pendant-une-partie" class="anchor" aria-label="Permalink: Ce qui est envoyé pendant une partie" href="#ce-qui-est-envoyé-pendant-une-partie"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Pour que les autres joueurs te voient, l'appli envoie au téléphone qui héberge la partie ton pseudo, ta couleur,
+ton avatar, ta photo de profil, ton identifiant de joueur, une clé propre à ce salon (tirée de ta clé secrète, qui,
+elle, ne part jamais), la version de ton appli, les actions de la partie et les messages du chat. Il les fait
+suivre aux autres joueurs.</p>
+<ul>
+<li>
+<strong>Sur le même Wi-Fi</strong>, ces informations passent directement d'un téléphone à l'autre, sans chiffrement.</li>
+<li>
+<strong>En ligne</strong>, elles passent par la base de données Firebase de l'appli (Google, serveurs en Europe), <strong>chiffrées
+de bout en bout</strong> entre ton téléphone et celui qui héberge la partie : la base, et quiconque la lirait, ne voit
+que des messages illisibles, et personne ne peut en fabriquer à ta place. Pour accéder à la base, chaque
+téléphone reçoit de Firebase une identité anonyme (aucun compte, aucun nom, aucune adresse e-mail). Les messages
+sont effacés environ une minute après avoir été lus ; ceux d'un salon abandonné, au plus tard une heure après.</li>
+<li>
+<strong>En secours</strong>, si Firebase ne répond pas, l'appli passe par un serveur relais public et gratuit
+(broker.emqx.io ou broker.hivemq.com) ; l'appli l'indique dans la fenêtre du code du salon. Les messages de la
+partie y restent <strong>chiffrés de la même façon</strong>. Ces serveurs se contentent de transmettre.</li>
+<li>
+<strong>Le chat</strong> : messages de 200 caractères au plus et réactions emoji, envoyés à tous les joueurs et spectateurs de
+la partie. Ils ne sont gardés nulle part : ils disparaissent de chaque téléphone à la fin de la partie.</li>
+<li>
+<strong>Les spectateurs</strong> (amis qui regardent la partie) voient les cartes de tous les joueurs.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Amis</h2><a id="user-content-amis" class="anchor" aria-label="Permalink: Amis" href="#amis"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Tant que l'appli est ouverte, elle prévient tes amis qu'elle est ouverte et leur dit où tu es (dans un salon en
+ligne avec son code, dans un salon sur le Wi-Fi avec l'adresse locale de la partie, ou en pleine partie), pour qu'ils
+puissent te rejoindre ou regarder. Ces messages passent par la base Firebase de l'appli (les serveurs relais publics
+seulement si Firebase ne répond pas). Ils sont <strong>chiffrés</strong> entre toi et chaque ami : seul ton code ami est lisible
+au passage ; ton pseudo, ton avatar, où tu es et tes invitations ne le sont que par lui. Une demande d'ami part
+avant que vous ayez une clé en commun : elle contient ton code ami, ton pseudo, ta couleur, ton avatar et ta clé
+publique, lisibles au passage. Le nom de ton Wi-Fi n'est jamais envoyé. Seuls les vrais messages de tes amis sont
+affichés : quelqu'un qui reprendrait le code d'un ami ne peut que te faire une demande, que tu acceptes ou non.</p>
+<div class="markdown-heading"><h2 class="heading-element">Parties prévues</h2><a id="user-content-parties-prévues" class="anchor" aria-label="Permalink: Parties prévues" href="#parties-prévues"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Quand tu proposes une partie à une date et une heure, ou que tu réponds à une proposition, la partie prévue est
+<strong>gardée dans la base Firebase de l'appli</strong> : la date et l'heure, le code ami, le pseudo, la couleur, l'avatar et la
+réponse de chaque invité, le code du salon quand il est ouvert, et une preuve (illisible) que l'organisateur est
+bien ton ami. Chacun ne peut changer que sa propre réponse. Une partie prévue est effacée automatiquement au plus
+tard 48 heures après son heure. L'organisateur peut l'annuler avant.</p>
+<div class="markdown-heading"><h2 class="heading-element">Notifications</h2><a id="user-content-notifications" class="anchor" aria-label="Permalink: Notifications" href="#notifications"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Si tu acceptes les notifications, ton téléphone s'abonne par Firebase Cloud Messaging (Google) à un sujet tiré au
+hasard, connu seulement de lui et de la passerelle de l'appli. Pour que seuls tes amis puissent te notifier, ton
+téléphone garde dans la base Firebase une petite fiche, lisible par toi seul et par la passerelle : ton identité
+anonyme, ce sujet, ton pseudo et les codes amis que tu as acceptés.</p>
+<p>Pour t'inviter ou te prévenir d'une partie prévue, l'appli d'un ami (ou le rappel automatique) appelle une petite
+passerelle de l'auteur de l'appli (Google Apps Script). Elle reçoit le code ami de l'expéditeur et du destinataire,
+la preuve d'identité anonyme de l'expéditeur, le code du salon (ou l'adresse locale de la partie) ou la partie
+prévue concernée. Elle vérifie que vous êtes amis (ou invités à la même partie), <strong>écrit elle-même le texte</strong> de la
+notification et la transmet aussitôt à Firebase. Elle ne garde que de quoi limiter le nombre d'envois (quelques
+minutes à une heure).</p>
+<div class="markdown-heading"><h2 class="heading-element">Rapports de plantage</h2><a id="user-content-rapports-de-plantage" class="anchor" aria-label="Permalink: Rapports de plantage" href="#rapports-de-plantage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Si l'appli rencontre une erreur imprévue, elle envoie un petit rapport dans la base Firebase de l'appli : la version
+de l'appli, le système (Android ou iPhone), l'endroit et le type de l'erreur, et un extrait technique de la pile.
+Le rapport ne contient ni ton pseudo, ni ton code ami, ni le contenu de la partie. Cinq rapports par jour au plus ;
+ils sont effacés au bout d'environ 30 jours (par la passerelle). Ils servent seulement à corriger l'appli.</p>
+<div class="markdown-heading"><h2 class="heading-element">Mises à jour</h2><a id="user-content-mises-à-jour" class="anchor" aria-label="Permalink: Mises à jour" href="#mises-à-jour"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Sur Android, l'appli demande à Google Play s'il existe une nouvelle version. Sur iPhone, elle lit une annonce de
+version publiée par l'auteur sur les serveurs relais ; rien n'est envoyé pour ça.</p>
+<div class="markdown-heading"><h2 class="heading-element">Appareil photo et galerie</h2><a id="user-content-appareil-photo-et-galerie" class="anchor" aria-label="Permalink: Appareil photo et galerie" href="#appareil-photo-et-galerie"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>L'appareil photo sert seulement à prendre ta photo de profil ou à scanner le QR code d'un salon ou d'un ami. La
+galerie sert seulement à choisir ta photo de profil. La photo est réduite et recadrée sur ton téléphone avant
+d'être utilisée ; le QR code est lu sur ton téléphone.</p>
+<div class="markdown-heading"><h2 class="heading-element">Qui peut voir quoi</h2><a id="user-content-qui-peut-voir-quoi" class="anchor" aria-label="Permalink: Qui peut voir quoi" href="#qui-peut-voir-quoi"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Les joueurs et spectateurs de ta partie voient ton profil et les messages du chat.</li>
+<li>Tes amis voient ta présence et les parties prévues où ils sont invités.</li>
+<li>L'auteur de l'appli peut voir, dans la console Firebase, les parties prévues en cours, les fiches des
+notifications (code ami, pseudo, codes des amis acceptés) et les rapports de plantage. Les messages de partie et
+ceux entre amis y sont chiffrés : il ne peut pas les lire. Il ne s'en sert que pour faire marcher et corriger
+l'appli.</li>
+<li>Google (Firebase, Apps Script, Google Play) traite ces données pour le compte de l'auteur. Les serveurs relais
+publics de secours ne voient passer que des messages chiffrés (sauf une demande d'ami envoyée pendant que
+Firebase ne répond pas : code ami, pseudo, couleur, avatar).</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Enfants</h2><a id="user-content-enfants" class="anchor" aria-label="Permalink: Enfants" href="#enfants"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>L'appli s'adresse aux personnes de 16 ans et plus.</p>
+<div class="markdown-heading"><h2 class="heading-element">Supprimer tes données</h2><a id="user-content-supprimer-tes-données" class="anchor" aria-label="Permalink: Supprimer tes données" href="#supprimer-tes-données"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Sur ton téléphone : retire ta photo dans « Mon profil », ou désinstalle l'appli pour tout effacer.</li>
+<li>Parties prévues : elles s'effacent toutes seules au plus tard 48 heures après leur heure ; l'organisateur peut
+les annuler avant.</li>
+<li>Pour demander l'effacement de tout ce qui te concerne dans la base Firebase de l'appli (ta fiche des
+notifications, tes parties prévues), écris à l'adresse e-mail
+indiquée sur la fiche Google Play de l'appli (donne ton code ami, dans « Mon profil »).</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Contact</h2><a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#contact"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Pour toute question, écris à l'adresse e-mail indiquée sur la fiche Google Play de l'appli.</p>
+</body></html>
